@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles can be added here if needed */
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <nav class="bg-gray-800 py-4">
+        <div class="container mx-auto flex items-center justify-between px-4">
+            <div>
+                <a href="#" class="text-white font-bold text-xl">LLM Stuff</a>
+            </div>
+            <div>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-white">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto py-8">
+        <h1 class="text-3xl font-bold mb-4 text-center">Photos and Embeddings</h1>
+        <div class="flex justify-center">
+            <div class="max-w-md">
+                {% for photo in photos %}
+                <div class="mb-8">
+                    <div class="overflow-hidden rounded-lg shadow-lg">
+                        <img src="{{ photo.url }}" alt="{{ photo.description }}" class="w-full">
+                    </div>
+                    <p class="text-center mt-4 text-gray-600">{{ photo.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+    </script>
+</body>
+</html>
