@@ -25,16 +25,10 @@
     </nav>
 
     <div class="container mx-auto py-8">
-        <h1 class="text-3xl font-bold mb-4 text-center">Enter Video ID</h1>
+        <h1 class="text-3xl font-bold mb-4 text-center">YouTube Video Thumbnail</h1>
         <div class="flex justify-center">
-            <div class="max-w-md">
-                <form action="/" method="POST" class="mb-8">
-                    <div class="mb-4">
-                        <label for="video_id" class="block text-gray-700 text-sm font-bold mb-2">Video ID</label>
-                        <input type="text" id="video_id" name="video_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    </div>
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
-                </form>
+            <div>
+                <img src="{{ thumbnail_url }}" alt="Thumbnail" class="max-w-lg mx-auto">
             </div>
         </div>
     </div>

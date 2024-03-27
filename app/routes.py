@@ -1,11 +1,15 @@
+from flask import render_template, request,redirect,url_for
+import requests
 from app import app
-from flask import render_template
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    photos = [
-        {"url": "https://images.unsplash.com/photo-1516117172878-fd2c41f4a759", "description": "Nature Scene"},
-        {"url": "https://images.unsplash.com/photo-1516117172878-fd2c41f4a759", "description": "Nature Scene"},
-        {"url": "https://images.unsplash.com/photo-1516117172878-fd2c41f4a759", "description": "Nature Scene"},
-    ]
-    return render_template("index.html", photos=photos)
+    if request.method == 'POST':
+        video_id = request.form.get('video_id')
+        return redirect(url_for('show_thumbnail', video_id=video_id))
+    return render_template("index.html")
+
+@app.route('/show_thumbnail/<video_id>')
+def show_thumbnail(video_id):
+    thumbnail_url = f"http://img.youtube.com/vi/{video_id}/maxresdefault.jpg"
+    return render_template("images.html", thumbnail_url=thumbnail_url)
